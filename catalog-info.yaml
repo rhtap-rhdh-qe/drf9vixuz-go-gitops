@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: drf9vixuz-go-gitops
+  description: This is GitOps manifest for drf9vixuz-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=drf9vixuz-go
+    backstage.io/kubernetes-id: drf9vixuz-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: drf9vixuz-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:drf9vixuz-go
